@@ -318,5 +318,18 @@ postgresql://postgres:prasanna123@localhost:5432/question_generator
 
 ---
 
-## 12. Summary
-This project is a practical, full-stack academic paper generation system that connects document parsing, database storage, random question selection, and final output generation into one workflow. It is especially suitable for institutions that need a faster and more structured way to create exam papers from uploaded question banks.
+## 12. Polished Project Summary for GitHub Presentation
+Generator is a full-stack academic exam paper generation platform built to simplify and automate the creation of structured question papers from uploaded PDF and DOCX question banks. The system combines a Flask backend, a React frontend, and a PostgreSQL database to extract questions, store them in a reusable question repository, generate balanced exam papers, and export them as DOCX or PDF.
+
+It is designed for educational institutions and faculty who want a faster, more organized, and less error-prone process for preparing question papers. With features such as authentication, admin question management, duplicate detection, and paper preview/download, Generator provides a practical end-to-end solution for modern academic paper generation workflows.
+
+### Why it stands out
+- Automates manual question-paper creation
+- Supports real document uploads and intelligent parsing
+- Stores questions for future reuse
+- Generates structured papers with exam metadata
+- Exports results in widely used formats
+- Provides a clean and user-friendly interface for both users and administrators
+
+### In one sentence
+Generator transforms raw question-bank documents into polished, downloadable exam papers through an intelligent, full-stack workflow.
