@@ -19,9 +19,21 @@ app = Flask(__name__)
 
 CORS(app)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:prasanna123@localhost:5432/question_generator"
+db_url = os.environ.get("DATABASE_URL")
+if not db_url:
+    default_pg = "postgresql://postgres:prasanna123@localhost:5432/question_generator"
+    try:
+        import psycopg2
+        conn = psycopg2.connect("host=localhost port=5432 user=postgres password=prasanna123 dbname=question_generator connect_timeout=1")
+        conn.close()
+        db_url = default_pg
+    except Exception:
+        db_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "question_generator.db")
+        db_url = f"sqlite:///{db_path}"
+
+app.config["SQLALCHEMY_DATABASE_URI"] = db_url
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SECRET_KEY"] = "your-secret-key-change-in-production"
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "your-secret-key-change-in-production")
 
 db = SQLAlchemy(app)
 
@@ -94,7 +106,8 @@ def pick_random(question_list, count):
 
 @app.route("/")
 def home():
-    return "PostgreSQL Connected Successfully ✅"
+    db_name = "PostgreSQL" if "postgresql" in app.config["SQLALCHEMY_DATABASE_URI"] else "SQLite"
+    return f"{db_name} Connected Successfully ✅"
 
 
 # ================= AUTHENTICATION ROUTES =================

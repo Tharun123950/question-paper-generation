@@ -1,0 +1,126 @@
+.app-root {
+  font-family: "Inter", "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+  color: #3b3b3b;
+  background: linear-gradient(180deg, #fffaf6 0%, #fff7f0 50%, #fff9f3 100%);
+  min-height: 100vh;
+}
+
+/* Global container */
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+}
+
+/* Header */
+.app-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(255,159,67,0.08), rgba(255,221,150,0.06));
+  box-shadow: 0 10px 30px rgba(255,160,80,0.06);
+}
+
+.app-title-main {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(90deg,#ff6b6b,#ffa94d,#ffd89b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.user-welcome {
+  color: #8b6f51;
+  font-weight: 600;
+}
+
+/* Cards and panels */
+.card {
+  border-radius: 16px;
+  border: 1px solid rgba(255,200,150,0.18);
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,250,246,0.9));
+  box-shadow: 0 12px 40px rgba(248, 184, 140, 0.08);
+}
+
+.card h3, .card h4, .card h5 {
+  color: #3b3b3b;
+}
+
+/* Buttons (override bootstrap look to match theme) */
+.btn-primary {
+  background: linear-gradient(90deg,#ff9e64,#ff7a4a);
+  border: none;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 10px 28px rgba(255,130,70,0.18);
+}
+
+.btn-success {
+  background: linear-gradient(90deg,#36d1dc,#5b86e5);
+  border: none;
+  color: white;
+  font-weight: 700;
+}
+
+.btn-outline-secondary, .btn-outline-primary, .btn-outline-success {
+  background: transparent;
+  border-width: 2px;
+  padding: 8px 14px;
+}
+
+.btn-danger {
+  background: linear-gradient(90deg,#ff6b6b,#ff8a80);
+  border: none;
+  color: white;
+}
+
+.btn:focus { outline: none; box-shadow: 0 6px 18px rgba(255,160,80,0.12); }
+
+/* Tabs area */
+.tabs { display:flex; gap:8px; justify-content:center; margin-bottom:20px; }
+
+/* Forms */
+.form-control {
+  border-radius: 10px;
+  border: 1px solid rgba(200,150,110,0.2);
+  padding: 10px 12px;
+  background: linear-gradient(180deg,#fffdf9,#fff9f4);
+}
+
+.form-select { border-radius: 10px; }
+
+/* Lists */
+.list-group-item {
+  border: 1px solid rgba(220,210,200,0.5);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  background: linear-gradient(180deg,#ffffff,#fffaf6);
+}
+
+.preview-box {
+  border-radius: 12px;
+  border: 1px solid rgba(220,220,220,0.7);
+  background: white;
+  padding: 18px;
+}
+
+/* Small utilities */
+.muted { color: #8b6f51; }
+.text-primary-strong { color: #ff6b6b; font-weight:700; }
+
+/* Admin area tweaks */
+.admin-panel .card { padding: 18px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-header-row { flex-direction: column; align-items:flex-start; }
+  .container { padding: 12px; }
+}
+
+/* Ensure login page styles don't conflict */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
